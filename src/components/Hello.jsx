@@ -3,9 +3,12 @@ const Hello = (props) => {
 
     // javascript codes
     // console.log(props);
+    const headerStyle = {
+        color: 'green', fontFamily: 'monospace'
+    };
 
   return (
-      <h1 style={{ color: 'green', fontFamily: 'monospace' }}>Hello { props.name }!</h1>
+      <h1 style={headerStyle}>Hello { props.name }!</h1>
   )
 } 
 
