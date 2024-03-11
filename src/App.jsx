@@ -1,9 +1,4 @@
-// creating a second component: Hello
-const Hello = () => {
-  return (
-    <h1>Hello World!</h1>
-  )
-} 
+import Hello from "./components/Hello"; // import the Hello component
 
 // Creating our first component
 const App = () => {
