@@ -1,9 +1,19 @@
+// creating a second component: Hello
+const Hello = () => {
+  return (
+    <h1>Hello World!</h1>
+  )
+} 
+
 // Creating our first component
-function App() {
+const App = () => {
   return (
     <div>
-      <h1>Hello World!</h1>
-      <p>A basic react application</p>
+      <Hello />
+      <Hello />
+      <Hello />
+      <Hello />
+      <Hello />
     </div>
   )
 }
