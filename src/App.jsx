@@ -1,20 +1,16 @@
+import Note from "./components/Note";
+
 const App = (props) => {
-
-  console.log(props.notes);
-
-  let notesList = [];
-
-  props.notes.forEach(note => {
-    notesList.push(<li>{note.content}</li>);
-  });
-
-  console.log(notesList);
 
   return (
     <div>
       <h1>Notes</h1>
       <ul>
-        { notesList }
+        { 
+          props.notes.map((note, index) => {
+            return <Note note={note} key={index} />;
+          })
+        }
       </ul>
     </div>
   )
