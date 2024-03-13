@@ -1,19 +1,13 @@
+import User from "./components/User";
+
 const App = () => {
 
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   return (
     <div>
       {
-        isLoggedIn ? (
-          <div>
-            <p>Welcome, User! <button>Logout</button></p>
-          </div>
-        ) : (
-            <div>
-              <p>Please login <button>Login</button></p>
-            </div>
-        )
+        isLoggedIn ? <User message="Welcome, User!" buttonLabel="Logout" /> : <User message="Please, Login!" buttonLabel="Login" />
       }
     </div>
   )
