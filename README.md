@@ -1,21 +1,22 @@
-# ReactJS
+### React - Day -4: React components
 
-- Is an open source JavaScript library for building user interfaces and single-page applications (SPAs).
-- It is maintained by Facebook and a community of individual developers and companies.
-- It is used for its simplicity, faster performance, scalability and flexibility.
+[] Components - In-depth
 
-## Features
+#### What is a component?
 
-- Component-based architecture
-  React uses a component-based architecture to build complex user interfaces. It allows you to break down your application into smaller, reusable components, which makes it easier to manage and maintain your code.
+A component is a reusable piece of code that can be used to build elements of a user interface. Components are the building blocks of any React application, and a single application can have any number of components. Components can be nested within other components to allow for complex user interfaces to be built out of simple building blocks.
 
-- Virtual DOM (Virtual Document Object Model)
-  React uses a virtual DOM to improve the performance of your application. It creates a lightweight copy of the actual DOM and updates only the parts of the actual DOM that have changed. This makes your application faster and more efficient.
+#### Types of components
 
-- JSX (JavaScript XML)
+There are two types of components in React:
 
-  - React uses JSX, a syntax extension that allows you to write HTML-like code in your JavaScript files. This makes your code more readable and easier to understand.
-  - JSX will then be transformed into regular javascript using a transpiler like Babel.
+1. **Functional components** - These are the simplest form of a React component. They are just JavaScript functions that return a React element. They are also called stateless components because they do not manage state.
 
-- State Management
-  React provides a simple and efficient way to manage the state of your application. It allows you to create and update the state of your components, which makes it easier to build interactive and dynamic user interfaces.
+2. **Class components** - These are more complex than functional components. They are JavaScript classes that extend the `React.Component` class. They are also called stateful components because they can manage state.
+
+[] Component life cycle  
+[] Stateful and stateless components  
+[] Reusable components  
+[] Passing dynamic data to component  
+[] Introduction to Hook
+[] props vs state

@@ -1,16 +1,23 @@
-import User from "./components/User";
+// functional component
+// stateless component
+// const App = () => {
+//   return (
+//     <div>App</div>
+//   )
+// }
 
-const App = () => {
+// export default App;
 
-  const isLoggedIn = false;
+import { Component } from 'react';
 
-  return (
-    <div>
-      {
-        isLoggedIn ? <User message="Welcome, User!" buttonLabel="Logout" /> : <User message="Please, Login!" buttonLabel="Login" />
-      }
-    </div>
-  )
+// class component
+// stateful component
+class App extends Component {
+  render() {
+    return(
+      <div>App</div>
+    )
+  }
 }
 
 export default App;
