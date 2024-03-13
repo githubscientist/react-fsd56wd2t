@@ -25,6 +25,21 @@ export class App extends Component {
     });
   }
 
+  // componentDidMount is called after the component is rendered to the DOM
+  componentDidMount() {
+    console.log('Component Did Mount');
+  }
+
+  // componentDidUpdate is called after the component is updated
+  componentDidUpdate() {
+    console.log('Component Did Update');
+  }
+
+  // componentWillUnmount is called before the component is removed from the DOM
+  componentWillUnmount() {
+    console.log('Component Will Unmount');
+  }
+
   render() {
     return (
       <div>
