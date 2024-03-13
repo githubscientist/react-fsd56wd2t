@@ -18,11 +18,20 @@ export class App extends Component {
     })
   }
 
+  decrement = () => {
+    console.log('decrementing...');
+
+    this.setState({
+      count: this.state.count - 1,
+    })
+  }
+
   render() {
     return (
       <div>
         <p>Count: {this.state.count}</p>
         <button onClick={this.increment}>Increment</button>
+        <button onClick={this.decrement}>Decrement</button>
       </div>
     )
   }
