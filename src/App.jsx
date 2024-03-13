@@ -1,21 +1,20 @@
-// functional component
-// stateless component
-// const App = () => {
-//   return (
-//     <div>App</div>
-//   )
-// }
+import React, { Component } from 'react';
 
-// export default App;
+class Hello extends Component {
+  render() {
+    return (
+      <p>Hello World!</p>
+    )
+  }
+}
 
-import { Component } from 'react';
-
-// class component
-// stateful component
 class App extends Component {
   render() {
-    return(
-      <div>App</div>
+    return (
+      <div>
+        <Hello />
+        <Hello />
+      </div>
     )
   }
 }
