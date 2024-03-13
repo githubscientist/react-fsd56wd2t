@@ -18,9 +18,9 @@ const App = (props) => {
         }
       </ul>
 
-      <form onSubmit={addNote}>
+      <form>
         <input />
-        <button type="submit">save</button>
+        <button type="submit" onClick={addNote}>save</button>
       </form>
 
     </div>
