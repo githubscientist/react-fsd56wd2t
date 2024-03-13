@@ -6,32 +6,33 @@ export class App extends Component {
     super(props);
 
     this.state = {
-      count: 0,
+      pCount: 0,
+      nCount: 0,
     };
   }
 
-  increment = () => {
-    console.log('incrementing...');
-
+  pincrement = () => {
     this.setState({
-      count: this.state.count + 1,
-    })
+      ...this.state,
+      pCount: this.state.pCount + 1
+    });
   }
 
-  decrement = () => {
-    console.log('decrementing...');
-
+  nincrement = () => {
     this.setState({
-      count: this.state.count - 1,
-    })
+      ...this.state,
+      nCount: this.state.nCount + 1
+    });
   }
 
   render() {
     return (
       <div>
-        <p>Count: {this.state.count}</p>
-        <button onClick={this.increment}>Increment</button>
-        <button onClick={this.decrement}>Decrement</button>
+        <p>Positive Count: {this.state.pCount}</p>
+        <button onClick={this.pincrement}>Pos +</button>
+
+        <p>Negative Count: {this.state.nCount}</p>
+        <button onClick={this.nincrement}>Neg +</button>
       </div>
     )
   }
