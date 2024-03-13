@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-
-class Hello extends Component {
-  render() {
-    return (
-      <p>Hello World!</p>
-    )
-  }
-}
+import Hello from './components/Hello';
 
 class App extends Component {
   render() {
