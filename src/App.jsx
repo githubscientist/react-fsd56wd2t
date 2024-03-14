@@ -2,20 +2,34 @@ import React, { useState } from 'react';
 
 const App = () => {
 
-  const [left, setLeft] = useState(0);
-  const [right, setRight] = useState(0);
+  const [clicks, setClicks] = useState({
+    left: 0,
+    right: 0
+  });
+
+  const [allClicks, setAllClicks] = useState([]);
 
   const handleLeftClick = () => {
-    setLeft(left + 1);
+    setClicks({
+      ...clicks,
+      left: clicks.left + 1
+    });
+    let newAllClicks = allClicks.concat('L');
+    setAllClicks(newAllClicks);
   }
 
   const handleRightClick = () => {
-    setRight(right + 1);
+    setClicks({
+      ...clicks,
+      right: clicks.right + 1
+    });
+    setAllClicks([...allClicks, 'R']);
   }
 
   return (
     <div>
-      <p>{ left } <button onClick={handleLeftClick}>left</button> <button onClick={handleRightClick}>right</button> { right }</p>
+      <p>{clicks.left} <button onClick={handleLeftClick}>left</button> <button onClick={handleRightClick}>right</button> {clicks.right}</p>
+      <p>{ allClicks.join(' ') }</p>
     </div>
   )
 }

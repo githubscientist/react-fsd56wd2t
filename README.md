@@ -15,7 +15,16 @@ Normal Variable Vs State Variable
 - normal variable is used to store the data which will not cause the re-render of the component.
 - state variable is used to store the data which will cause the re-render of the component.
 
-[] Lifecycle of Hook
+[x] Lifecycle of Hooks
+
+- Hooks doesn't have lifecycle methods like class components. But instead they have a set of rules that govern when they are called.
+
+Rules of hooks:
+
+- Only call hooks at the top level
+- Only call hooks from React function components
+- Do not use hooks inside loops, conditions or nested functions
+
 [x] useState, useEffect
 [] Props drilling
 [] Passing data from child to parent component
