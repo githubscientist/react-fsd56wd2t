@@ -34,12 +34,11 @@ useEffect:
 
 [] Props drilling
 [] Passing data from child to parent component
+[] lifting the state up  
 [] props vs state
+[] fontawesome and bootstrap - react installation
+[] email otp api
 
 Task:
 
 https://docs.google.com/document/d/1frCM6keoI6YKQqxm0XbgEP2CCZjDH5Zi8wEp_NXtk2g/edit
-
-```
-
-```
