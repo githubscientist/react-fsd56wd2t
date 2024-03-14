@@ -2,27 +2,38 @@ import { useEffect, useState } from "react";
 
 const App = () => {
 
-  const [state, setState] = useState(0);
+  const [posts, setPosts] = useState(null);
 
-  // // called only once when the component is mounted
-  // useEffect(() => {
-  //   console.log('use effect called...', state);
-  // }, []);
-
-  // called when the component is mounted and whenever the state changes
   useEffect(() => {
-    console.log('use effect called...', state);
-  }, [state]);
+    fetchPosts();
+  }, []);
 
-  // called when the component is mounted and whenever the state variable changes
-  // useEffect(() => {
-  //   console.log('use effect called...', state);
-  // });
+  useEffect(() => {
+    console.log(posts);
+  }, [posts]);
+
+  const fetchPosts = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const data = await response.json();
+    setPosts(data);
+  }
 
   return (
     <div>
-      <p>{ state }</p>
-      <button onClick={() => setState(state + 1)}>Update State</button>
+      <h1>Posts</h1>
+      {
+        posts ? (
+          <ul>
+            {
+              posts && posts.map(post => (
+                <li key={post.id}>{ post.title }</li>
+              ))
+            }
+          </ul>
+        ) : (
+          <p>Fetching Data...</p>
+        )
+      }
     </div>
   )
 }
