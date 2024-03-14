@@ -26,6 +26,12 @@ Rules of hooks:
 - Do not use hooks inside loops, conditions or nested functions
 
 [x] useState, useEffect
+
+useEffect:
+
+- It is used to perform side effects in your functional components.
+- For example: data fetching, subscriptions, or manually changing the DOM in React components.
+
 [] Props drilling
 [] Passing data from child to parent component
 [] props vs state
