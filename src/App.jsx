@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Display from "./components/Display";
+import Button from "./components/Button";
 
 const App = () => {
 
@@ -17,14 +18,23 @@ const App = () => {
     setCount(0);
   }
 
-  console.log('incrementing...', count);
+  console.log('App component rendering...', count);
 
   return (
     <div>
       <Display count={ count } />
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={reset}>Reset</button>
+      <Button
+        text="Increment" 
+        onClick={ increment }
+      />
+      <Button
+        text="Decrement" 
+        onClick={decrement}
+      />
+      <Button
+        text="Reset" 
+        onClick={reset}
+      />
     </div>
   )
 }
