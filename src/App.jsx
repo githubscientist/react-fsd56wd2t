@@ -1,17 +1,12 @@
-import { useState } from "react";
-import Display from "./components/Display";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
 
 const App = () => {
-  const [counter, setCounter] = useState(0);
-
-  const updateCounter = (counter) => {
-    setCounter(counter+1);
-  }
-
   return (
     <div>
-      <h3>Count: {counter}</h3>
-      <Display updateCounter={ updateCounter } />
+      <FontAwesomeIcon icon={faCoffee} />
+      <FontAwesomeIcon icon={faHouse} />
     </div>
   )
 }

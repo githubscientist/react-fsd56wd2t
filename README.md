@@ -35,10 +35,16 @@ useEffect:
 [x] Props drilling
 [x] Passing data from child to parent component
 [x] lifting the state up  
-[] props vs state
+[x] props vs state
+
+- props are used to pass data from parent to child component.
+- state is used to store the data that will cause the re-render of the component.
+- Any update in the state will update the props.
+
 [] fontawesome and bootstrap - react installation
 [] email otp api
 [] closure
+[] images in react app
 
 Task:
 
