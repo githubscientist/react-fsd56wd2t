@@ -1,9 +1,9 @@
 import GrandChildCom from "./GrandChildCom";
 
-const ChildCom = ({ count }) => {
+const ChildCom = ({ count, setCount }) => {
   return (
     <div>
-        <GrandChildCom count={ count } />      
+          <GrandChildCom count={count} setCount={ setCount } />      
     </div>
   )
 }

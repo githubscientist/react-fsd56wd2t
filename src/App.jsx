@@ -8,8 +8,7 @@ const App = () => {
 
   return (
     <div>
-      <ChildCom count={count} />
-      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <ChildCom count={count} setCount={ setCount } />
     </div>
   )
 }
