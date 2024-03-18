@@ -33,8 +33,8 @@ useEffect:
 - For example: data fetching, subscriptions, or manually changing the DOM in React components.
 
 [x] Props drilling
-[] Passing data from child to parent component
-[] lifting the state up  
+[x] Passing data from child to parent component
+[x] lifting the state up  
 [] props vs state
 [] fontawesome and bootstrap - react installation
 [] email otp api

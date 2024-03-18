@@ -1,14 +1,12 @@
 import { useState } from "react";
-import ChildCom from "./components/ChildCom";
+import Display from "./components/Display";
 
-// parent component
 const App = () => {
-
-  const [count, setCount] = useState(0);
+  const [counter, setCounter] = useState(0);
 
   return (
     <div>
-      <ChildCom count={count} setCount={ setCount } />
+      <Display counter={counter} setCounter={ setCounter } />
     </div>
   )
 }
