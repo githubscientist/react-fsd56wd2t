@@ -38,6 +38,7 @@ useEffect:
 [] props vs state
 [] fontawesome and bootstrap - react installation
 [] email otp api
+[] closure
 
 Task:
 

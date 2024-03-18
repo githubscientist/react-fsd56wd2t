@@ -4,10 +4,18 @@ const App = () => {
 
   const [posts, setPosts] = useState(null);
 
+  // runs on every render of the component (infinite loop)
+  // useEffect(() => {
+  //   fetchPosts();
+  // });
+
+  // runs only once when the component is mounted
   useEffect(() => {
+    console.log('fetching data...');
     fetchPosts();
   }, []);
 
+  // runs when the component is mounted and when the posts state changes
   useEffect(() => {
     console.log(posts);
   }, [posts]);
