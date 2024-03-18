@@ -4,9 +4,14 @@ import Display from "./components/Display";
 const App = () => {
   const [counter, setCounter] = useState(0);
 
+  const updateCounter = (counter) => {
+    setCounter(counter+1);
+  }
+
   return (
     <div>
-      <Display counter={counter} setCounter={ setCounter } />
+      <h3>Count: {counter}</h3>
+      <Display updateCounter={ updateCounter } />
     </div>
   )
 }
