@@ -1,13 +1,14 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import guvi from './assets/guvi.jpg';
 
 const App = () => {
   return (
     <div>
-      <FontAwesomeIcon icon={faCoffee} />
-      <FontAwesomeIcon icon={faHouse} />
-      <h1 className='text-primary'>This is a bootstrap header</h1>
+      <h2>Hello, Guvi!!</h2>
+      <img
+        src={guvi}
+        alt="guvi" 
+        width="100%"
+      />
     </div>
   )
 }
