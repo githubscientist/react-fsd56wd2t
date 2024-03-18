@@ -7,6 +7,7 @@ const App = () => {
     <div>
       <FontAwesomeIcon icon={faCoffee} />
       <FontAwesomeIcon icon={faHouse} />
+      <h1 className='text-primary'>This is a bootstrap header</h1>
     </div>
   )
 }

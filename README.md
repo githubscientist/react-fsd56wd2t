@@ -41,9 +41,9 @@ useEffect:
 - state is used to store the data that will cause the re-render of the component.
 - Any update in the state will update the props.
 
-[] fontawesome and bootstrap - react installation
-[] email otp api
-[] closure
+[x] fontawesome and bootstrap - react installation
+[x] email otp api
+[x] closure
 [] images in react app
 
 Task:
