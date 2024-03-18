@@ -32,7 +32,7 @@ useEffect:
 - It is used to perform side effects in your functional components.
 - For example: data fetching, subscriptions, or manually changing the DOM in React components.
 
-[] Props drilling
+[x] Props drilling
 [] Passing data from child to parent component
 [] lifting the state up  
 [] props vs state
@@ -43,3 +43,9 @@ useEffect:
 Task:
 
 https://docs.google.com/document/d/1frCM6keoI6YKQqxm0XbgEP2CCZjDH5Zi8wEp_NXtk2g/edit
+
+Virtual DOM:
+
+- The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
+- This will update the real DOM only if there is any change in the virtual DOM.
+- This will make the application faster.

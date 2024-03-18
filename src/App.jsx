@@ -1,30 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import ChildCom from "./components/ChildCom";
 
-// mounted: the component is inserted into the DOM
-
+// parent component
 const App = () => {
 
-  const [counter, setCounter] = useState(0);
-
-  // runs every time the component is rendered
-  useEffect(() => {
-    console.log('from useEffect without dependencies');
-  }, []);
-
-  // runs only once
-  useEffect(() => {
-    console.log('from useEffect without dependencies');
-  }, []);
-
-  // runs every time the component is rendered
-  useEffect(() => {
-    console.log('from useEffect with dependencies');
-  }, [counter]);
+  const [count, setCount] = useState(0);
 
   return (
     <div>
-      <p>Counter: {counter}</p>
-      <button onClick={() => setCounter(counter + 1)}>Increase</button>
+      <ChildCom count={count} />
+      <button onClick={() => setCount(count + 1)}>Increment</button>
     </div>
   )
 }
