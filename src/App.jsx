@@ -1,47 +1,30 @@
 import { useEffect, useState } from "react";
 
+// mounted: the component is inserted into the DOM
+
 const App = () => {
 
-  const [posts, setPosts] = useState(null);
+  const [counter, setCounter] = useState(0);
 
-  // runs on every render of the component (infinite loop)
-  // useEffect(() => {
-  //   fetchPosts();
-  // });
-
-  // runs only once when the component is mounted
+  // runs every time the component is rendered
   useEffect(() => {
-    console.log('fetching data...');
-    fetchPosts();
+    console.log('from useEffect without dependencies');
   }, []);
 
-  // runs when the component is mounted and when the posts state changes
+  // runs only once
   useEffect(() => {
-    console.log(posts);
-  }, [posts]);
+    console.log('from useEffect without dependencies');
+  }, []);
 
-  const fetchPosts = async () => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-    const data = await response.json();
-    setPosts(data);
-  }
+  // runs every time the component is rendered
+  useEffect(() => {
+    console.log('from useEffect with dependencies');
+  }, [counter]);
 
   return (
     <div>
-      <h1>Posts</h1>
-      {
-        posts ? (
-          <ul>
-            {
-              posts && posts.map(post => (
-                <li key={post.id}>{ post.title }</li>
-              ))
-            }
-          </ul>
-        ) : (
-          <p>Fetching Data...</p>
-        )
-      }
+      <p>Counter: {counter}</p>
+      <button onClick={() => setCounter(counter + 1)}>Increase</button>
     </div>
   )
 }
