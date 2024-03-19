@@ -1,11 +1,9 @@
-import { useState } from "react"
 import Home from "./components/Home";
 import Notes from "./components/Notes";
 import Users from "./components/Users";
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 const App = () => {
-
-  const [page, setPage] = useState('home');
 
   const navStyles = {
     display: 'flex',
@@ -14,28 +12,24 @@ const App = () => {
     borderBottom: '1px solid #ddd'
   }
 
-  const content = () => {
-    if (page === 'home') {
-      return <Home />
-    } else if (page === 'notes') {
-      return <Notes />
-    } else if (page === 'users') {
-      return <Users />
-    }
-  }
-
   return (
-    <div>
+    <Router>
       <div style={navStyles}>
-        <a href="#" onClick={() => setPage('home')}>home</a>
-        <a href="#" onClick={() => setPage('notes')}>notes</a>
-        <a href="#" onClick={() => setPage('users')}>users</a>
+        <Link to="/">home</Link>
+        <Link to="/notes">notes</Link>
+        <Link to="/users">users</Link>
       </div>
 
-      {
-        content()
-      }
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/notes" element={<Notes />} />
+        <Route path="/users" element={<Users />} />
+      </Routes>
+
+      <div>
+        <i>Notes Application, Guvi-2024 &copy; All rights reserved</i>
+      </div>
+    </Router>
   )
 }
 
