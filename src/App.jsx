@@ -30,6 +30,27 @@ const App = ({ todoList }) => {
     e.target.newTodo.focus();
   }
 
+  const updateTodo = () => {
+    let id = 1;
+    let updatedTitle = 'Learn TypeScript and React';
+
+    // find the object with the id 2
+    let updatedTodo = todos.find(todo => todo.id === id);
+
+    // console.log(todo);
+
+    updatedTodo = {
+      ...updatedTodo,
+      title: updatedTitle
+    }
+
+    // setTodos(todos.map(todo => todo.id === id ? updatedTodo : todo));
+
+    let filteredTodos = todos.filter(todo => todo.id !== id);
+    // filteredTodos.push(updatedTodo);
+    setTodos(filteredTodos.concat(updatedTodo));
+  }
+
   return (
     <div>
       <h1>Todo List</h1>
@@ -45,6 +66,8 @@ const App = ({ todoList }) => {
         <input type="text" name="newTodo" required />
         <button type="submit">Add</button>
       </form>
+      <br />
+      <button onClick={updateTodo}>Update Todo</button>
     </div>
   )
 }
