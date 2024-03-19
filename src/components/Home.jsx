@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const Home = () => {
 
@@ -17,6 +17,8 @@ const Home = () => {
         <Link to="/notes">notes</Link>
         <Link to="/users">users</Link>
       </div>
+
+      <Outlet />
       
       <div>
         <i>Notes Application, Guvi-2024 &copy; All rights reserved</i>
