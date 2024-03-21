@@ -10,7 +10,7 @@
 Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 
 [x] Avoid props drilling  
-[] Session task – profile name changes  
+[x] Session task – profile name changes  
 [] todo task - demonstration  
 [] data to the form when clicking on the edit button for a specific todo task
 
