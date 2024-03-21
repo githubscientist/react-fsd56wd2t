@@ -1,24 +1,19 @@
-import { createContext, useEffect, useState } from 'react';
-import C1 from './components/C1';
-import C2 from './components/C2';
+import { createContext, useState } from "react";
+import Profile from "./components/Profile";
 
-// create a context
-export const CoinContext = createContext();
+export const NameContext = createContext();
 
 const App = () => {
 
-  const [coins, setCoins] = useState([25, 30, 45, 60, 75]);
-
-  useEffect(() => {
-    console.log(coins);
-  }, [coins]);
+  const [name, setName] = useState('Guest');
 
   return (
     <div>
-      <CoinContext.Provider value={{ coins, setCoins }}>
-        <C1 />
-        <C2 />
-      </CoinContext.Provider>
+      <h3>User Profile</h3>
+      <p><strong>Name:</strong> {name}</p>
+      <NameContext.Provider value={{ name, setName }}>
+        <Profile />
+      </NameContext.Provider>
     </div>
   )
 }
