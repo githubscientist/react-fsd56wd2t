@@ -1,15 +1,23 @@
-import { useRef } from "react";
+import { createRef, useRef } from "react";
 
 const App = () => {
 
   // create a reference using useRef hook
-  const noteInputRef = useRef(null);
+  const refs = useRef(Array.from({ length: 2 }, () => createRef()));
+
+  console.log(refs);
 
   const handleClick = () => {
     // console.log(noteInputRef.current);
     // console.log(noteInputRef.current.value);
     // noteInputRef.current.value = "Hello, World!";
-    noteInputRef.current.focus();
+    // noteInputRef.current.focus();
+
+    let note = refs.current[0].current.value;
+    let name = refs.current[1].current.value;
+
+    console.log(note);
+    console.log(name);
   }
 
   return (
@@ -17,7 +25,7 @@ const App = () => {
       <input 
         type="text"
         placeholder="Type your note..."
-        
+        ref={refs.current[0]}
       />
 
       <br /><br />
@@ -25,12 +33,13 @@ const App = () => {
       <input 
         type="text"
         placeholder="Type your name..."
-        ref={noteInputRef}
+        // ref={noteInputRef}
+        ref={refs.current[1]}
       />
 
       <br /><br />
 
-      <button onClick={handleClick}>Focus Input</button>
+      <button onClick={handleClick}>Submit</button>
     </div>
   )
 }
