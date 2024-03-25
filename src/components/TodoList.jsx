@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import AddTodo from './AddTodo';
+import { TodoContext } from '../App';
 
-const TodoList = ({ addTodoList }) => {
+const TodoList = () => {
 
-  const [todos, setTodos] = useState([
-    { id: 1, text: 'Learn React', completed: false },
-    { id: 2, text: 'Learn Redux', completed: false },
-    { id: 3, text: 'Build something fun!', completed: false }
-  ]);
-
-  useEffect(() => {
-    addTodoList(todos);
-  }, [todos]);
+  const { todos, setTodos } = useContext(TodoContext);
 
   return (
     <div>

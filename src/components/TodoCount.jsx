@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoContext } from '../App';
 
-const TodoCount = ({ todoList }) => {
+const TodoCount = () => {
+
+  const { todos } = useContext(TodoContext);
+
   return (
     <div>
-        Total number of todos: {todoList.length}
+        Total number of todos: {todos.length}
     </div>
   )
 }

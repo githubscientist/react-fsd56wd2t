@@ -1,21 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TodoContext } from '../App';
 
-const AddTodo = ({ todos, setTodos }) => {
+const AddTodo = () => {
+
+  const { todos, setTodos } = useContext(TodoContext);
 
   const addTodo = (event) => {
     event.preventDefault()
     const todo = event.target.elements[0].value;
     event.target.elements[0].value = '';
-    setTodos(prevState => {
-      return [
-        ...prevState,
-        {
-          id: prevState.length + 1,
-          text: todo,
-          completed: false
-        }
-      ]
-    })
+    console.log(todo);
+    setTodos([...todos, { id: todos.length + 1, text: todo, completed: false }]);
   }
 
   return (

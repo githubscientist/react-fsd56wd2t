@@ -1,27 +1,22 @@
+import { createContext, useState } from "react";
 import TodoCount from "./components/TodoCount";
 import TodoList from "./components/TodoList";
-import { useEffect, useState } from "react";
+
+export const TodoContext = createContext();
 
 const App = () => {
-
-  const [todoList, setTodoList] = useState([]);
-
-  const addTodoList = (todos) => {
-    setTodoList(todos);
-  }
-
-  useEffect(() => {
-    console.log(todoList);
-  }, [todoList]);
+  const [todos, setTodos] = useState([
+    { id: 1, text: 'Learn React', completed: false },
+    { id: 2, text: 'Learn Redux', completed: false },
+    { id: 3, text: 'Build something fun!', completed: false }
+  ]);
 
   return (
     <div>
-      <TodoCount 
-        todoList={todoList}
-      />
-      <TodoList 
-        addTodoList={addTodoList}
-      />
+      <TodoContext.Provider value={{ todos, setTodos }}>
+        <TodoCount />
+        <TodoList />
+      </TodoContext.Provider>
     </div>
   )
 }
