@@ -3,11 +3,12 @@ import { TodoContext } from '../App';
 
 const TodoCount = () => {
 
-  const { todos } = useContext(TodoContext);
+  const { state } = useContext(TodoContext);
+  console.log(state);
 
   return (
     <div>
-        Total number of todos: {todos.length}
+        Total number of todos: {state.todos.length}
     </div>
   )
 }

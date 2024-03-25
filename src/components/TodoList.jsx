@@ -4,18 +4,18 @@ import { TodoContext } from '../App';
 
 const TodoList = () => {
 
-  const { todos, setTodos } = useContext(TodoContext);
+  const { state, dispatch } = useContext(TodoContext);
 
   return (
     <div>
       <ul>
-        {todos.map(todo => (
+        {state.todos.map(todo => (
           <li key={todo.id}>{todo.text}</li>
         ))}
       </ul>
       <AddTodo 
-        todos={todos}
-        setTodos={setTodos}
+        todos={state.todos}
+        setTodos={dispatch}
       />
     </div>
   )

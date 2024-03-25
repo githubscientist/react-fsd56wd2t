@@ -3,14 +3,19 @@ import { TodoContext } from '../App';
 
 const AddTodo = () => {
 
-  const { todos, setTodos } = useContext(TodoContext);
+  const { state, dispatch } = useContext(TodoContext);
 
   const addTodo = (event) => {
     event.preventDefault()
     const todo = event.target.elements[0].value;
     event.target.elements[0].value = '';
     console.log(todo);
-    setTodos([...todos, { id: todos.length + 1, text: todo, completed: false }]);
+    dispatch({
+      type: 'ADD_TODO',
+      payload: {
+        text: todo
+      }
+    });
   }
 
   return (
