@@ -10,7 +10,7 @@
 [x] useReducer hook
 [x] closure
 [x] filter in todo task
-[] context api with fetch - example
+[x] context api with fetch - example
 [] stack data structures to find valid parantheses
 
 ## React- Day -9: useRef & useReducer
