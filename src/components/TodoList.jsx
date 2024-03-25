@@ -1,22 +1,27 @@
 import React, { useContext } from 'react'
 import AddTodo from './AddTodo';
 import { TodoContext } from '../App';
+import FilterTodos from './FilterTodos';
 
 const TodoList = () => {
 
   const { state, dispatch } = useContext(TodoContext);
 
+  const filteredTodos = state.todos.filter(todo => {
+    if (state.filter === 'All') return true;
+    if (state.filter === 'Completed') return todo.completed;
+    if (state.filter === 'Incomplete') return !todo.completed;
+  });
+
   return (
     <div>
+      <FilterTodos />
       <ul>
-        {state.todos.map(todo => (
+        {filteredTodos.map(todo => (
           <li key={todo.id}>{todo.text}</li>
         ))}
       </ul>
-      <AddTodo 
-        todos={state.todos}
-        setTodos={dispatch}
-      />
+      <AddTodo />
     </div>
   )
 }

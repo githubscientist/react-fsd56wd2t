@@ -7,9 +7,9 @@
 - Lifting the state up is a technique to move the state fro the child component to a higher-level parent component in the component tree.
 - So that, all the child components can access the state and update the state.
 
-[] useReducer hook
-[] closure
-[] filter in todo task
+[x] useReducer hook
+[x] closure
+[x] filter in todo task
 [] context api with fetch - example
 [] stack data structures to find valid parantheses
 
