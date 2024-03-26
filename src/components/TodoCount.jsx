@@ -4,7 +4,6 @@ import { TodoContext } from '../App';
 const TodoCount = () => {
 
   const { state } = useContext(TodoContext);
-  console.log(state);
 
   return (
     <div>

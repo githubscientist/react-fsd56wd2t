@@ -1,8 +1,6 @@
 const initialState = {
     todos: [
-        { id: 1, text: 'Learn React', completed: true },
-        { id: 2, text: 'Learn Redux', completed: false },
-        { id: 3, text: 'Build something fun!', completed: false }
+        
     ],
     filter: 'All'
 }
@@ -25,6 +23,11 @@ const todosReducer = (state, action) => {
             return {
                 ...state,
                 filter: action.payload.status,
+            }
+        case 'TODOS_ALL':
+            return {
+                todos: action.payload.todos,
+                filter: 'All'
             }
         default: 
             return state;

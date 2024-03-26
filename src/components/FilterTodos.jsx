@@ -12,7 +12,6 @@ const FilterTodos = () => {
   }
 
   const updateFilter = (e) => {
-    console.log(e.target.value);
     dispatch(
       {
         type: 'TOGGLE_TODO',

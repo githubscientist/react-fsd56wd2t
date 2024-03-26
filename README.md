@@ -24,7 +24,19 @@
 - We can manipulate the element using the reference without any unnecessary re-rendering of the component.
 
 [x] useReducer  
-[] Front end game demonstration - hangman / tictactoe / tile match
+[x] Front end game demonstration - hangman / tictactoe / tile match
+
+## React- Day -10: Axios
+
+### Contents:
+
+[x] Playing around with API  
+[x] fetch() or Axios
+
+- Axios is a promise-based HTTP client for the browser and node.js.
+- Axios makes it easy to send asynchronous HTTP requests to REST endpoints and perform CRUD operations.
+
+[x] Implementing simple CRUD -- read completed, -- create, update, delete pending
 
 **Pre-read:**
 https://www.npmjs.com/package/axios
