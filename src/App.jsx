@@ -1,6 +1,26 @@
+import './App.css';
+
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <div className='row'>
+        <button className='square'></button>
+        <button className='square'></button>
+        <button className='square'></button>
+      </div>
+
+      <div className='row'>
+        <button className='square'></button>
+        <button className='square'></button>
+        <button className='square'></button>
+      </div>
+
+      <div className='row'>
+        <button className='square'></button>
+        <button className='square'></button>
+        <button className='square'></button>
+      </div>
+    </div>
   )
 }
 
