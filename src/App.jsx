@@ -11,6 +11,11 @@ const App = () => {
   }, [squares]);
 
   const handleClick = (index) => {
+    // if the index box is already filled, return
+    if (squares[index]) {
+      return;
+    }
+
     console.log(index + ' clicked');
     const squaresCopy = [...squares];
     squaresCopy[index] = 'X';
