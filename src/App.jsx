@@ -1,24 +1,25 @@
 import './App.css';
+import Button from './components/Button';
 
 const App = () => {
   return (
     <div>
       <div className='row'>
-        <button className='square'></button>
-        <button className='square'></button>
-        <button className='square'></button>
+        <Button />
+        <Button />
+        <Button />
       </div>
 
       <div className='row'>
-        <button className='square'></button>
-        <button className='square'></button>
-        <button className='square'></button>
+        <Button />
+        <Button />
+        <Button />
       </div>
 
       <div className='row'>
-        <button className='square'></button>
-        <button className='square'></button>
-        <button className='square'></button>
+        <Button />
+        <Button />
+        <Button />
       </div>
     </div>
   )
