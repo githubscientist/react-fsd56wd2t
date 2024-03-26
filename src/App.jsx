@@ -5,6 +5,7 @@ import Button from './components/Button';
 const App = () => {
 
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [isXNext, setIsXNext] = useState(true);
 
   useEffect(() => {
     console.log(squares);
@@ -16,14 +17,28 @@ const App = () => {
       return;
     }
 
-    console.log(index + ' clicked');
+    // take the copy of the squares array
     const squaresCopy = [...squares];
-    squaresCopy[index] = 'X';
+
+
+    if (isXNext) {
+      squaresCopy[index] = 'X';
+    } else {
+      squaresCopy[index] = 'O';
+    }
+
+    // set the squares array with the updated copy
     setSquares(squaresCopy);
+    setIsXNext(!isXNext);
   }
+
+  let status = `Next player: ${isXNext ? 'X' : 'O'}`;
 
   return (
     <div>
+      <div>
+        <h1>{status}</h1>
+      </div>
       <div className='row'>
         <Button
           value={squares[0]}
