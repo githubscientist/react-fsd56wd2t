@@ -1,14 +1,70 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Button from './components/Button';
+import WinningLine from './components/WinningLine';
 
 const App = () => {
 
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
+  const [winningLine, setWinningLine] = useState({
+    angle: 0,
+    length: 0,
+    position: { x: 0, y: 0 }
+  });
+  const [winner, setWinner] = useState(null);
 
   useEffect(() => {
-    console.log(squares);
+    let winner = calculateWinner(squares);
+    if (winner) {
+      setWinner(winner[0]);
+      let angle, length, position;
+
+      if (winner[1] === 0 && winner[2] === 1 && winner[3] === 2) {
+        angle = 0;
+        length = 200;
+        position = { x: 0, y: 110 };
+      } else if(winner[1] === 3 && winner[2] === 4 && winner[3] === 5) {
+        angle = 0;
+        length = 200;
+        position = { x: 0, y: 170 };
+      } else if(winner[1] === 6 && winner[2] === 7 && winner[3] === 8) {
+        angle = 0;
+        length = 200;
+        position = { x: 0, y: 230 };
+      } else if(winner[1] === 0 && winner[2] === 3 && winner[3] === 6) {
+        angle = 90;
+        length = 200;
+        position = { x: -62, y: 170 };
+      } else if (winner[1] === 1 && winner[2] === 4 && winner[3] === 7) {
+        angle = 90;
+        length = 300;
+        position = { x: 300, y: 0 };
+      } else if (winner[1] === 2 && winner[2] === 5 && winner[3] === 8) {
+        angle = 90;
+        length = 300;
+        position = { x: 500, y: 0 };
+      } else if (winner[1] === 0 && winner[2] === 4 && winner[3] === 8) {
+        angle = 45;
+        length = 400;
+        position = { x: 0, y: 0 };
+      } else if (winner[1] === 2 && winner[2] === 4 && winner[3] === 6) {
+        angle = -45;
+        length = 400;
+        position = { x: 500, y: 0 };
+      } else {
+        angle = 0;
+        length = 0;
+        position = { x: 0, y: 0 };
+      }
+
+      setWinningLine({
+        angle,
+        length,
+        position
+      });
+    }
+
   }, [squares]);
 
   const handleClick = (index) => {
@@ -48,14 +104,12 @@ const App = () => {
       const [a, b, c] = winningLines[i];
 
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        return squares[a];
+        return [squares[a], a, b, c];
       }
     }
 
     return null;
   }
-
-  let winner = calculateWinner(squares);
 
   let status;
 
@@ -119,9 +173,21 @@ const App = () => {
           onClick={() => {
             setSquares(Array(9).fill(null));
             setIsXNext(true);
+            setWinner(null);
+            setWinningLine({
+              angle: 0,
+              length: 0,
+              position: { x: 0, y: 0 }
+            });
           }}
           className='resetGame'
         >Restart Game</button>
+      </div>
+
+      <div>
+        <WinningLine 
+          winningLine={winningLine}
+        />
       </div>
     </div>
   )

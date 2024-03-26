@@ -1,0 +1,4 @@
+.winnerLine {
+    position: absolute;
+    border-bottom: 2px solid red;
+}
