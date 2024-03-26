@@ -114,6 +114,15 @@ const App = () => {
           onClick={() => handleClick(8)}
         />
       </div>
+      <div>
+        <button
+          onClick={() => {
+            setSquares(Array(9).fill(null));
+            setIsXNext(true);
+          }}
+          className='resetGame'
+        >Restart Game</button>
+      </div>
     </div>
   )
 }
