@@ -5,7 +5,7 @@ import FilterTodos from './FilterTodos';
 
 const TodoList = () => {
 
-  const { state, dispatch, users } = useContext(TodoContext);
+  const { state, dispatch } = useContext(TodoContext);
 
   const filteredTodos = state.todos.filter(todo => {
     if (state.filter === 'All') return true;
@@ -22,11 +22,6 @@ const TodoList = () => {
         ))}
       </ul>
       <AddTodo />
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
     </div>
   )
 }

@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <div>
-      <TodoContext.Provider value={{ state, dispatch, users }}>
+      <TodoContext.Provider value={{ state, dispatch }}>
         <TodoCount />
         <TodoList />
       </TodoContext.Provider>
