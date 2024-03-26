@@ -12,6 +12,9 @@ const App = () => {
 
   const handleClick = (index) => {
     console.log(index + ' clicked');
+    const squaresCopy = [...squares];
+    squaresCopy[index] = 'X';
+    setSquares(squaresCopy);
   }
 
   return (
