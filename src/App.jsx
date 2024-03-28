@@ -1,6 +1,10 @@
+import ContactForm from './components/ContactForm';
+
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <ContactForm />
+    </div>
   )
 }
 
