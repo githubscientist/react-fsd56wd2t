@@ -12,7 +12,7 @@ const App = () => {
   useEffect(() => {
     axios.get('https://6602ea4b9d7276a7555490e0.mockapi.io/api/v1/todos')
       .then(response => {
-        console.log(response);
+        // console.log(response);
         dispatch({ type: 'TODOS_ALL', payload: { todos: response.data } });
       });
   }, []);
